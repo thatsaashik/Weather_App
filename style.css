@@ -1,0 +1,198 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+
+}
+body{
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+
+
+}
+html,body{
+    font-size: 62.5%;
+    height: 100%;
+
+
+}
+.box{
+    width: 20vw;
+    height: 60vh;
+    border-radius: 0.6rem;
+    box-shadow: 0 0 .2rem 0.1rem rgba(0, 0,0, 0.2);
+    background: #a5bbdd;
+    position: relative;
+    overflow: hidden;
+    transform: translate3d(0,0,0);
+    min-height: 35rem;
+    min-width: 20rem;
+}
+.wave1{
+    opacity: 0.3;
+    position: relative;
+    top: 120%;
+    left: 50%;
+    background: white;
+    width: 50rem;
+    height: 50rem;
+    margin-left: -25rem;
+    margin-top: -25rem;
+    transform-origin: 50% 48%;
+    border-radius: 43%;
+    animation: drift 3000ms infinite linear;
+    z-index: -1;
+    
+
+
+}
+
+.wave3{
+
+animation: drift 5000ms infinite linear;
+z-index: 2 !important;
+opacity: 0.2;
+
+}
+.wave2{
+
+    animation: drift 7000ms infinite linear;
+opacity: 0.1;
+z-index: 3 !important;
+
+}
+.box::after{
+    content: "";
+    display: block;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 11;
+    transform: translate3d(0,0,0);
+
+
+  }
+  @keyframes drift{
+    from{
+    transform: rotate(0deg);
+    }
+   from{
+    transform: rotate(369deg);
+
+}
+    
+}
+
+.info{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 46%;
+    z-index: 4;
+
+}
+.location{
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 800;
+    font-size: 3rem;
+    font-weight: 600;
+
+
+}
+.fa-solid fa-street-view{
+    animation: rotates 3s linear infinite alternate;
+
+}
+@keyframes rotates{
+
+ from{
+    transform: translateX(-0.5rem);
+
+}to{
+    transform: translateX(0.5rem);
+}
+}
+
+#date{
+    text-align: center;
+    margin-top: 0.5rem;
+    color: #57606f;
+    font-size: 1rem;
+    font-weight: 300;
+    text-transform: uppercase;
+
+}
+.temp{
+    margin-top: 2.5rem;
+    text-align: center;
+    font-size: 3rem;
+
+
+
+}
+.mim_max{
+    text-align: center;
+    margin-top: 0.3rem;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color:#57606f ;
+
+
+}
+#weathericon
+{
+    height: -80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+}
+
+#weathericon .fas
+{
+    font-size: 6rem;
+    animation: fas-anime 3s linear infinite alternate;
+
+}
+@keyframes fas-anime{
+    from
+    {
+        transform: scale(0.8rem);
+
+    }
+    to{
+    transform: scale(1.2rem);
+
+    }
+
+}
+@media(max-width : 600px)
+{
+    .box{
+        width: 90vh;
+        height: 80vh;
+
+    
+    }
+    .wave1{
+   top: 85%;
+
+    }
+    
+    #weathericon {
+        font-size: 5em;
+
+}
+.info{
+    font-size: 1.5rem;
+
+}
+
+}
